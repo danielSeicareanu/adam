@@ -26,8 +26,8 @@ namespace Twenty.Web.Services.Audit.Controllers
             this.trackableService = trackableService;
         }
 
-        // Clients of the class need to call Audit method for first time to record current properties
-        // for example after entity is queried from the database
+        // Clients of the class need to call Audit method to record current properties
+        // after entity is queried from the database
         // After those properties and fields change we call Audit method again to register current properties
         // and update previous properties (see EntityTrackerBase for implementation)
         [HttpPost]
@@ -37,7 +37,7 @@ namespace Twenty.Web.Services.Audit.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, entity);
         }
 
-        // Will return the audit update summary for public fields user might have changed
+        // Will return the update summary message for public fields user might have changed
         [HttpPost]
         public HttpResponseMessage GetChangedFieldsAuditMessage(object entity)
         {
@@ -45,7 +45,7 @@ namespace Twenty.Web.Services.Audit.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, message);
         }
 
-        // Will return the audit update summary for public properties user might have changed
+        // Will return the update summary for public properties user might have changed
         [HttpPost]
         public HttpResponseMessage GetChangedPropertiesAuditMessage(object entity)
         {
