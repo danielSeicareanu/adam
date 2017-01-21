@@ -12,8 +12,8 @@ using Twenty.EntityTracker.Interfaces;
 namespace Twenty.Web.Services.Audit.Controllers
 {
     /// <summary>
-    /// Web service for tracking entity properties and fields that change between to calls to Audit method
-    /// entity can be aby type but must derive from EntityTrackerBase on the web services side only
+    /// Web service for tracking entity properties and fields 
+    /// entity can be any type but must derive from EntityTrackerBase on the web services side only
     /// Current implementation will track only properties and fields of primitive data types
     /// </summary>
     public class EntityTrackerController : ApiController
