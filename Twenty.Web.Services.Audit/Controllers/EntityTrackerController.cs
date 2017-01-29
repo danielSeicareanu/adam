@@ -12,8 +12,8 @@ using Twenty.EntityTracker.Interfaces;
 namespace Twenty.Web.Services.Audit.Controllers
 {
     /// <summary>
-    /// Web service for tracking entity properties and fields that change between to calls to Audit method
-    /// entity can be aby type but must derive from EntityTrackerBase on the web services side only
+    /// Web service for tracking entity properties and fields 
+    /// entity can be any type but must derive from EntityTrackerBase on the web services side only
     /// Current implementation will track only properties and fields of primitive data types
     /// </summary>
     public class EntityTrackerController : ApiController
@@ -26,8 +26,8 @@ namespace Twenty.Web.Services.Audit.Controllers
             this.trackableService = trackableService;
         }
 
-        // Clients of the class need to call Audit method for first time to record current properties
-        // for example after entity is queried from the database
+        // Clients of the class need to call Audit method to record current properties
+        // after entity is queried from the database
         // After those properties and fields change we call Audit method again to register current properties
         // and update previous properties (see EntityTrackerBase for implementation)
         [HttpPost]
@@ -37,7 +37,7 @@ namespace Twenty.Web.Services.Audit.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, entity);
         }
 
-        // Will return the audit update summary for public fields user might have changed
+        // Will return the update summary message for public fields user might have changed
         [HttpPost]
         public HttpResponseMessage GetChangedFieldsAuditMessage(object entity)
         {
@@ -45,7 +45,7 @@ namespace Twenty.Web.Services.Audit.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, message);
         }
 
-        // Will return the audit update summary for public properties user might have changed
+        // Will return the update summary for public properties user might have changed
         [HttpPost]
         public HttpResponseMessage GetChangedPropertiesAuditMessage(object entity)
         {

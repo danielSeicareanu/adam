@@ -9,7 +9,6 @@ using Twenty.EntityTracker.Interfaces;
 namespace Twenty.Domain
 {
     /// <summary>
-    /// Will forward calls to the base entity methods 
     /// Entity must derive from EntityTrackerBase, but can be any class
     /// </summary>
     public class EntityTrackerService:ITrackableEntity
