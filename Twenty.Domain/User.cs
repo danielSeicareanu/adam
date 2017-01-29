@@ -10,7 +10,7 @@ namespace Twenty.Domain
 {
     public class User : EntityTrackerBase
     {
-        public string city;
+        public string City;
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }

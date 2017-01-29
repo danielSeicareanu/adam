@@ -1,0 +1,9 @@
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\bin\Debug\Twenty.Domain.dll
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\bin\Debug\Twenty.Domain.pdb
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\bin\Debug\Ninject.dll
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\bin\Debug\Twenty.EntityTracker.dll
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\bin\Debug\Twenty.EntityTracker.pdb
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\bin\Debug\Ninject.xml
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\obj\Debug\Twenty.Domain.csprojResolveAssemblyReference.cache
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\obj\Debug\Twenty.Domain.dll
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.Domain\obj\Debug\Twenty.Domain.pdb

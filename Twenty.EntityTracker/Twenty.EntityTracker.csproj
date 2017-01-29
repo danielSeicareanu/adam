@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityTrackerBase.cs" />
+    <Compile Include="Factories\FieldsAuditMessageCreatorFactory.cs" />
+    <Compile Include="Factories\PropertiesMessageCreatorFactory.cs" />
     <Compile Include="FieldsMessageCreator.cs" />
     <Compile Include="Interfaces\IAuditable.cs" />
     <Compile Include="Interfaces\IChangedFieldsAuditMessage.cs" />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Twenty.EntityTracker.Factories;
 using Twenty.EntityTracker.Interfaces;
 
 namespace Twenty.EntityTracker
@@ -21,8 +22,11 @@ namespace Twenty.EntityTracker
         {
             // Will reference the derived type/class
             entityType = this.GetType();
-            FieldsAuditMessageCreator = new FieldsMessageCreator();
-            PropertiesAuditMessageCreator = new PropertiesMessageCreator();
+            fieldsMessageCreatorFactory = new FieldsAuditMessageCreatorFactory();
+            propertiesMessageCreatorFactory = new PropertiesMessageCreatorFactory();
+
+            FieldsAuditMessageCreator = fieldsMessageCreatorFactory.CreateFieldsAuditMessageCreator();
+            PropertiesAuditMessageCreator = propertiesMessageCreatorFactory.CreatePropertiesMessageCreator();
         }
         /// <summary>
         /// Client should call Audit method after entity queried from database and before entity is saved to database
@@ -104,9 +108,10 @@ namespace Twenty.EntityTracker
         }
 
         /// <summary>
-        /// TODO: set implementor with a factory method
+        /// will set fileds changed message creator
+        /// will set entity tracker to provide access to changed properties
         /// </summary>
-        public IChangedFieldsAuditMessage FieldsAuditMessageCreator
+        protected virtual IChangedFieldsAuditMessage FieldsAuditMessageCreator
         {
             get
             {
@@ -122,9 +127,10 @@ namespace Twenty.EntityTracker
         }
 
         /// <summary>
-        /// TODO: set implementor with a factory method
+        /// will set a properties changed message creator 
+        /// will set entity tracker to provide access to changed properties
         /// </summary>
-        public IChangedPropertiesAuditMessage PropertiesAuditMessageCreator
+        protected virtual IChangedPropertiesAuditMessage PropertiesAuditMessageCreator
         {
             get
             {
@@ -155,6 +161,9 @@ namespace Twenty.EntityTracker
         {
             get { return currentPropertyValues; }
         }
+
+        private FieldsAuditMessageCreatorFactory fieldsMessageCreatorFactory;
+        private PropertiesMessageCreatorFactory propertiesMessageCreatorFactory;
 
         private IChangedFieldsAuditMessage fieldsAuditMessageCreator;
         private IChangedPropertiesAuditMessage propertiesAuditMessageCreator;

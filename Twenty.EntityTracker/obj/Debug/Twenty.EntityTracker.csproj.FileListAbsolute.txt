@@ -1,0 +1,5 @@
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.EntityTracker\bin\Debug\Twenty.EntityTracker.dll
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.EntityTracker\bin\Debug\Twenty.EntityTracker.pdb
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.EntityTracker\obj\Debug\Twenty.EntityTracker.csprojResolveAssemblyReference.cache
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.EntityTracker\obj\Debug\Twenty.EntityTracker.dll
+C:\12Twenty\Twenty.Web.Services.Audit\Twenty.EntityTracker\obj\Debug\Twenty.EntityTracker.pdb

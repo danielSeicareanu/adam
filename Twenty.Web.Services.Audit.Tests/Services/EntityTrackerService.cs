@@ -21,7 +21,7 @@ namespace Twenty.Web.Services.Audit.Tests.Services
                 FirstName = "Dan",
                 LastName = "Parker",
                 Age = 31,
-                city = "Anaheim"
+                City = "Anaheim"
             };
 
             ITrackableEntity service = new EntityTrackerService();
@@ -43,7 +43,7 @@ namespace Twenty.Web.Services.Audit.Tests.Services
                 FirstName = "Dan",
                 LastName = "Parker",
                 Age = 31,
-                city = "Anaheim"
+                City = "Anaheim"
             };
 
             ITrackableEntity service = new EntityTrackerService();
@@ -54,7 +54,7 @@ namespace Twenty.Web.Services.Audit.Tests.Services
             // change a few properties
             user.FirstName = "Florian";
             user.LastName = "Bates";
-            user.city = "Los angeles";
+            user.City = "Los angeles";
 
             // register changes
             service.Audit(user);
@@ -69,7 +69,7 @@ namespace Twenty.Web.Services.Audit.Tests.Services
             Assert.IsFalse(String.IsNullOrWhiteSpace(propertiesChangedMessage));
             Assert.IsFalse(String.IsNullOrWhiteSpace(fieldsChangedMessage));
             Assert.AreEqual(propertiesChangedMessage, "property FirstName, original value: Dan, new value: Florian\r\nproperty LastName, original value: Parker, new value: Bates\r\n");
-            Assert.AreEqual(fieldsChangedMessage, "field city, original value: Anaheim, new value: Los angeles\r\n");
+            Assert.AreEqual(fieldsChangedMessage, "field City, original value: Anaheim, new value: Los angeles\r\n");
 
         }
     }
